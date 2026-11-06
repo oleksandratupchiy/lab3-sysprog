@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini C · дерево AST</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <div><p class="eyebrow">MINI C / PLY LALR</p><h1>Дерево програми</h1></div>
+    <label class="file-button">Відкрити AST JSON <input id="file" type="file" accept=".json,application/json"></label>
+    <button id="reset" disabled>Умістити дерево</button>
+  </header>
+  <main>
+    <p id="status" role="status">Експортуйте AST: python main.py examples/complex.c --emit-ast output/ast.json</p>
+    <div class="legend" aria-label="Кольори вузлів"><span style="--color:#5689ce">Структура</span><span style="--color:#ae6cdb">Керування</span><span style="--color:#d78b37">Змінні</span><span style="--color:#319e85">Вирази</span></div>
+    <svg id="tree" role="img" aria-label="Інтерактивне дерево абстрактного синтаксису"></svg>
+    <p class="hint">Коліщатко — масштаб · Перетягування — переміщення · Натисніть вузол або Enter — згорнути гілку · Наведіть курсор — подробиці. Для завантаження d3.js потрібен інтернет.</p>
+  </main>
+</body>
+</html>
